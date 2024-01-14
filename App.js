@@ -5,11 +5,17 @@ import JournalScreen from './screens/Journal';
 import GalleryScreen from './screens/Gallery';
 import MoodScreen from './screens/Mood';
 import SettingsScreen from './screens/Settings';
-import { Text, View } from 'react-native';
-import Navigation from './components/navigation';
+import { useFonts, NotoSerifDisplay_400Regular } from '@expo-google-fonts/noto-serif-display';
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  let [fontsLoaded, fontError] = useFonts({
+    NotoSerifDisplay_400Regular,
+  });
+  if (!fontsLoaded && !fontError) {
+    return null;
+  }
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Journal' screenOptions={{headerShown:false, animation:'none'}}>
