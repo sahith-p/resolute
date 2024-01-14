@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "unitedhacks",
-    "slug": "unitedhacks",
+    "slug": "resolute",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -25,7 +25,13 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "337ac84c-a538-4169-87f8-61dcfc1e7181"
+      }
+    },
+    "owner": "sahithp"
   },
   "plugins": [
     [
