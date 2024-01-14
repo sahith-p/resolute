@@ -39,6 +39,7 @@ export default function CreateJournal(props) {
         setQ5(entry.q5);
     }
     }
+    fetch();
   return (
     <Modal animationType='slide' visible={props.visible} presentationStyle='formSheet'>
         <ScrollView className='bg-stone-900 h-full flex'>
@@ -56,35 +57,35 @@ export default function CreateJournal(props) {
             numberOfLines={5} multiline={true} autoFocus={true} selectionColor={'#fbbf24'}
             returnKeyLabel='next' placeholderTextColor='#78716c'  
             enterKeyHint='next' keyboardAppearance='dark' className='h-20 text-sm text-white px-5'
-            onChangeText={(text) => setQ1(text)}
+            onChangeText={(text) => setQ1(text)} defaultValue={q1}
             />
             <Text className='mx-5 pt-5 font-bold text-stone-500 text-xs'>WHAT WILL I DO TO MAKE TODAY GREAT?</Text>
             <TextInput
             numberOfLines={5} multiline={true} selectionColor={'#fbbf24'}
             returnKeyLabel='next' placeholderTextColor='#78716c'  
             enterKeyHint='next' keyboardAppearance='dark' className='h-20 text-sm text-white px-5'
-            onChangeText={(text) => setQ2(text)}
+            onChangeText={(text) => setQ2(text)} defaultValue={q2}
             />
             <Text className='mx-5 pt-5 font-bold text-stone-500 text-xs'>DAILY AFFIRMATIONS</Text>
             <TextInput
             numberOfLines={5} multiline={true} selectionColor={'#fbbf24'}
             returnKeyLabel='next' placeholderTextColor='#78716c'  
             enterKeyHint='next' keyboardAppearance='dark' className='h-20 text-sm text-white px-5'
-            onChangeText={(text) => setQ3(text)}
+            onChangeText={(text) => setQ3(text)} defaultValue={q3}
             />
             <Text className='mx-5 pt-5 font-bold text-stone-500 text-xs'>HIGHLIGHTS OF THE DAY</Text>
             <TextInput
             numberOfLines={5} multiline={true} selectionColor={'#fbbf24'}
             returnKeyLabel='done' placeholderTextColor='#78716c'  
             enterKeyHint='done' keyboardAppearance='dark' className='h-20 text-sm text-white px-5'
-            onChangeText={(text) => setQ4(text)}
+            onChangeText={(text) => setQ4(text)} defaultValue={q4}
             />
             <Text className='mx-5 pt-5 font-bold text-stone-500 text-xs'>OVERALL MOOD</Text>
             <TextInput
             numberOfLines={5} multiline={true} selectionColor={'#fbbf24'}
             returnKeyLabel='done' placeholderTextColor='#78716c'  
             enterKeyHint='done' keyboardAppearance='dark' className='h-20 text-sm text-white px-5'
-            onChangeText={(text) => setQ5(text)}
+            onChangeText={(text) => setQ5(text)} defaultValue={q5}
             />
             <View className='pt-[90px] pb-[350px]'>
             <TouchableWithoutFeedback onPress={async ()=>handleSubmit()}>

@@ -6,6 +6,7 @@ import { AntDesign } from '@expo/vector-icons';
 import CreateJournal from '../components/createJournal';
 import dayjs from 'dayjs';
 import * as db from 'expo-secure-store';
+
 const getMonth=()=>{
   const month = new Date().getMonth();
   const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
@@ -40,16 +41,16 @@ async function findEntries() {
     return entries
   }
 
-  const sleep = (ms) => {   return new Promise((resolve) => setTimeout(resolve, ms)); };
 export default function JournalScreen({navigation}) {
   const [modalVisible, setModalVisible] = useState(false);
   const [entries, setEntries] = useState([]);
+  const [remounter, force] = useState(true);
   useEffect(() => {
-    async function a() {setEntries(await findEntries());}
+    async function a() {setEntries(await findEntries());force(!remounter);}
     a();
   }, [])
   return (
-      <View className="w-screen h-screen flex justify-between bg-stone-900 pt-[65px]">
+      <View key={remounter.toString()} className="w-screen h-screen flex justify-between bg-stone-900 pt-[65px]">
         <View className='flex-row bg-stone-900 justify-between items-center pb-5 px-5 '>
           <TouchableWithoutFeedback>
             <EvilIcons name="calendar" size={35} color="#fbbf24" />

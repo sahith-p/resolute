@@ -32,6 +32,10 @@
       "expo-font",
       {
         "fonts": "node_modules/@expo-google-fonts/inter/Inter_100Thin.ttf"
+      },
+      "expo-image-picker",
+      {
+        "photosPermission": "The app accesses your photos to let you write about them."
       }
     ]
   ]
